@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+
+$primary: #084a91;   // dark red matching your map palette
+$link-color: $primary;
+
+/*-- scss:rules --*/
+
+.navbar {
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+
+iframe {
+  background: white;
+}

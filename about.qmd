@@ -4,8 +4,33 @@ title: "About"
 
 # Third Places
 
-The term *third place* was coined by sociologist Ray Oldenburg in his 1989 book \_The Great Good Places\_. Third Places are spaces open to the public in which they can informally gather, mingle, and pass time, such as restaurants, cafés, bookstores, or libraries. The term "Third Place" stems from the distinction from "First Places" (the home) and "Second Places" (work and education). See Methodology for a full list of Third Places included in our definition.
+The term **third place** was coined by sociologist Ray Oldenburg in his 1989 book *The Great Good Places*. Third Places are spaces open to the public in which they can informally gather, mingle, and pass time, such as restaurants, cafés, bookstores, or libraries. The term "Third Place" stems from the distinction from "First Places" (the home) and "Second Places" (work and education). See Methodology for a full list of Third Places included in our definition.
 
-The Third Place Index, following a publication from the US by \[<https://thirdplaceindex.org/#about>\](Evan O'Neil), maps the availability of Third Places in the Netherlands. It gives a score to each area ranging from 0 to 100 describing how good the availability of Third Places is compared to other areas in the Netherlands. Low numbers indicate places with few Third Places and with higher danger of isolation while higher numbers indicate a wider availability of community building.
+The Third Place Index, following a publication from the US by [Evan O'Neil](https://thirdplaceindex.org/#about), maps the availability of Third Places in the Netherlands. It gives a score to each area ranging from 0 to 100 describing how good the availability of Third Places is compared to other areas in the Netherlands. Low numbers indicate places with few Third Places and with higher danger of isolation while higher numbers indicate a wider availability of community building.
 
-\[methodology.html\](View the full description of the methodology)
+[View the full description of the methodology](./methodology.html)
+
+# The Authors
+
+![Tim Florschütz](picture/tim.png)
+
+
+
+
+
+![Aidan Kloots](pictures/aidan.png)
+
+
+
+
+
+![Till Hovestadt](pictures/till.jpg = 600x)
+
+
+
+
+# Acknowledgements
+
+This project developed as part of the Summer Institute of Computational Social Science ([SICSS](https://sicss.io/2026/odissei/)) 2026 at ODISSEI Nederland. We want extend our gratitude to the organisers of the SICSS, most notably [Tom Emery](https://www.eur.nl/people/tom-emery), [Angelica Maineri](https://odissei-data.nl/nl/teammember/dr-angelica-maineri/), [Javier Garcia Bernardo](https://www.uu.nl/staff/JGarciaBernardo), and [Tadas Bernotas](https://www.eur.nl/people/tadas-bernotas). Last but not least, we want to thank the other [participants](https://sicss.io/2026/odissei/people) of the SICSS ODISSEI 2026.
+
+

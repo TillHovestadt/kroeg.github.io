@@ -4,22 +4,15 @@ title: "Methodology"
 
 # Methodology
 
-This page is a placeholder for the narrative behind the map.
+We drew upon data from the [Dutch Chamber of Commerce](https://www.kvk.nl/) to build the Third Place Index. We classified all registered entities in the Dutch Chamber of Commerce as belonging to one of the following sectors: 
 
-You can use it to describe:
+- Food & Beverage: e.g, restaurants, cafés, or bars
+- Retail: e.g., supermarkets, department stores, or small business
+- Community Centres: e.g., libraries, youth centres
+- Cultural Venues: e.g, cinemas, bookstores, or theatres
+- Sport & Leisure: e.g., gyms, or attraction parks
+- Medical Services: e.g., pharmacies, hospitals, or doctors
 
-- data sources
-- filtering rules
-- how the person-level data were aggregated to group level
-- how indicators were defined
-- any missing-data handling
-- limitations and caveats
+The exact codebook can be downloaded on Github:  [Download Sector Classification Codebook](https://www.kvk.nl/)
 
-## Map workflow
-
-The static dashboard works like this:
-
-1.  Python-generated Plotly maps are saved as separate HTML files in `plots/`.
-2.  A manifest file maps each `group level + indicator` combination to one HTML file.
-3.  Panel exports a static HTML dashboard with dropdown menus.
-4.  Quarto publishes the site to GitHub Pages.
+We calculated the number of Third Places of each of these sectors per PC-4 postcode. 

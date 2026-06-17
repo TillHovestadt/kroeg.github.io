@@ -1,25 +1,32 @@
 project:
   type: website
-  output-dir: docs
   render:
     - "*.qmd"
-    - "!scripts/"
+    - "!_scratch/"
   resources:
     - plots/**
-    
+    - pictures/**
+  output-dir: docs
+
 website:
-  title: "Map dashboard"
+  title: "Third Place Index"
   navbar:
+    background: light
+    search: false
     left:
       - href: index.qmd
         text: Dashboard
-      - href: about.qmd
-        text: About
       - href: methodology.qmd
         text: Methodology
+      - href: about.qmd
+        text: About
 
 format:
   html:
-    theme: flatly
+    theme:
+      - cosmo
+      - custom.scss
+    toc: true
+    toc-depth: 2
+    smooth-scroll: true
     page-layout: full
-    toc: false

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dashboard – Map dashboard</title>
+<title>Dashboard – Third Place Index</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6033a600180109c3731f6a886c29932c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-611752b6577404124c0f5855d7d116bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -82,10 +83,9 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Map dashboard</span>
+    <span class="navbar-title">Third Place Index</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -96,12 +96,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Dashboard</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./methodology.html"> 
 <span class="menu-text">Methodology</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -114,7 +114,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
 
@@ -138,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><label for="dashboard-select">Choose an index:</label> <select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;"> <option value="plots/third_places_total_ranked.html">All Third Places</option> <option value="plots/third_places_non_medical_total_ranked.html">All Third Places without Medical Facilities</option> <option value="plots/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option> <option value="plots/third_places_medical_ranked.html">Medical Facilities only</option> <option value="plots/third_places_retail_ranked.html">Retail Stores only</option> <option value="plots/third_places_food_beverage_ranked.html">Food &amp; Beverage Places only</option> <option value="plots/third_places_community_ranked.html">Community Spaces only</option> <option value="plots/third_places_cultural_ranked.html">Cultural Venues only</option> <option value="plots/third_places_sport_leisure_ranked.html">Sports &amp; Leisure Places only</option> </select></p>
-<iframe id="dashboard-frame" src="plots/third_places_total_ranked.html" style="width:100%; height:90vh; border:0; border-radius:12px;">
+<iframe id="dashboard-frame" src="plots/third_places_total_ranked.html" style="width:100%; height:100%; border:0; border-radius:12px;">
 </iframe>
 <script>
 window.addEventListener("load", () => {
@@ -571,4 +573,5 @@ window.addEventListener("load", () => {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

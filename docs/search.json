@@ -4,21 +4,21 @@
     "href": "methodology.html",
     "title": "Methodology",
     "section": "",
-    "text": "This page is a placeholder for the narrative behind the map.\nYou can use it to describe:\n\ndata sources\nfiltering rules\nhow the person-level data were aggregated to group level\nhow indicators were defined\nany missing-data handling\nlimitations and caveats\n\n\n\nThe static dashboard works like this:\n\nPython-generated Plotly maps are saved as separate HTML files in plots/.\nA manifest file maps each group level + indicator combination to one HTML file.\nPanel exports a static HTML dashboard with dropdown menus.\nQuarto publishes the site to GitHub Pages."
+    "text": "Methodology\nWe drew upon data from the Dutch Chamber of Commerce to build the Third Place Index. We classified all registered entities in the Dutch Chamber of Commerce as belonging to one of the following sectors:\n\nFood & Beverage: e.g, restaurants, cafés, or bars\nRetail: e.g., supermarkets, department stores, or small business\nCommunity Centres: e.g., libraries, youth centres\nCultural Venues: e.g, cinemas, bookstores, or theatres\nSport & Leisure: e.g., gyms, or attraction parks\nMedical Services: e.g., pharmacies, hospitals, or doctors\n\nThe exact codebook can be downloaded on Github: Download Sector Classification Codebook\nWe calculated the number of Third Places of each of these sectors per PC-4 postcode."
   },
   {
-    "objectID": "methodology.html#map-workflow",
-    "href": "methodology.html#map-workflow",
-    "title": "Methodology",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
     "section": "",
-    "text": "The static dashboard works like this:\n\nPython-generated Plotly maps are saved as separate HTML files in plots/.\nA manifest file maps each group level + indicator combination to one HTML file.\nPanel exports a static HTML dashboard with dropdown menus.\nQuarto publishes the site to GitHub Pages."
+    "text": "Data"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Third Places\nThe term third place was coined by sociologist Ray Oldenburg in his 1989 book _The Great Good Places_. Third Places are spaces open to the public in which they can informally gather, mingle, and pass time, such as restaurants, cafés, bookstores, or libraries. The term “Third Place” stems from the distinction from “First Places” (the home) and “Second Places” (work and education). See Methodology for a full list of Third Places included in our definition.\nThe Third Place Index, following a publication from the US by [https://thirdplaceindex.org/#about](Evan O’Neil), maps the availability of Third Places in the Netherlands. It gives a score to each area ranging from 0 to 100 describing how good the availability of Third Places is compared to other areas in the Netherlands. Low numbers indicate places with few Third Places and with higher danger of isolation while higher numbers indicate a wider availability of community building.\n[methodology.html](View the full description of the methodology)"
+    "text": "Third Places\nThe term third place was coined by sociologist Ray Oldenburg in his 1989 book The Great Good Places. Third Places are spaces open to the public in which they can informally gather, mingle, and pass time, such as restaurants, cafés, bookstores, or libraries. The term “Third Place” stems from the distinction from “First Places” (the home) and “Second Places” (work and education). See Methodology for a full list of Third Places included in our definition.\nThe Third Place Index, following a publication from the US by Evan O’Neil, maps the availability of Third Places in the Netherlands. It gives a score to each area ranging from 0 to 100 describing how good the availability of Third Places is compared to other areas in the Netherlands. Low numbers indicate places with few Third Places and with higher danger of isolation while higher numbers indicate a wider availability of community building.\nView the full description of the methodology\n\n\nThe Authors\n\n\n\nTim Florschütz\n\n\n\n\n\nAidan Kloots\n\n\n\n\n\nTill Hovestadt\n\n\n\n\nAcknowledgements\nThis project developed as part of the Summer Institute of Computational Social Science (SICSS) 2026 at ODISSEI Nederland. We want extend our gratitude to the organisers of the SICSS, most notably Tom Emery, Angelica Maineri, Javier Garcia Bernardo, and Tadas Bernotas. Last but not least, we want to thank the other participants of the SICSS ODISSEI 2026."
   },
   {
     "objectID": "index.html",
