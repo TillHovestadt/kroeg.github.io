@@ -1,0 +1,40 @@
+{
+  "labels": [
+    {
+      "label": "Label 1",
+      "stem": "kroeg_index1"
+    },
+    {
+      "label": "Label 2",
+      "stem": "kroeg_index2"
+    },
+    {
+      "label": "Label 3",
+      "stem": "kroeg_index3"
+    },
+    {
+      "label": "Label 4",
+      "stem": "kroeg_index4"
+    },
+    {
+      "label": "Label 5",
+      "stem": "kroeg_index5"
+    }
+  ],
+  "modes": [
+    "universal",
+    "bygroup"
+  ],
+  "plots": {
+    "kroeg_index1::universal": "maps/kroeg_index1__universal.html",
+    "kroeg_index1::bygroup": "maps/kroeg_index1__bygroup.html",
+    "kroeg_index2::universal": "maps/kroeg_index2__universal.html",
+    "kroeg_index2::bygroup": "maps/kroeg_index2__bygroup.html",
+    "kroeg_index3::universal": "maps/kroeg_index3__universal.html",
+    "kroeg_index3::bygroup": "maps/kroeg_index3__bygroup.html",
+    "kroeg_index4::universal": "maps/kroeg_index4__universal.html",
+    "kroeg_index4::bygroup": "maps/kroeg_index4__bygroup.html",
+    "kroeg_index5::universal": "maps/kroeg_index5__universal.html",
+    "kroeg_index5::bygroup": "maps/kroeg_index5__bygroup.html"
+  }
+}

@@ -1,11 +1,36 @@
 ---
 title: "Dashboard"
+format: html
 ---
 
 ::: callout-note
-This page embeds the static Panel dashboard exported to HTML.
+This page embeds a dashboard selected from a dropdown.
 :::
 
-<iframe src="panel-dashboard.html" style="width: 100%; height: 92vh; border: 0; border-radius: 16px;" loading="lazy">
+<label for="dashboard-select">Choose an index:</label>
+<select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;">
+  <option value="plots/third_places_total_ranked.html">All Third Places</option>
+  <option value="plots/third_places_non_medical_total_ranked.html">All Third Places without Medical Facilities</option>
+  <option value="plots/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option>
+  <option value="plots/third_places_medical_ranked.html">Medical Facilities only</option>
+  <option value="plots/third_places_retail_ranked.html">Retail Stores only</option>
+  <option value="plots/third_places_food_beverage_ranked">Food & Beverage Places only</option>
+  <option value="plots/third_places_community_ranked.html">Community Spaces only</option>
+  <option value="plots/third_places_cultural_ranked.html">Cultural Venues only</option>
+  <option value="plots/third_places_sport_leisure_ranked.html">Sports & Leisure Places only</option>
+</select>
 
+<iframe
+  id="dashboard-frame"
+  src="plots/dashboard.html"
+  style="width:100%; height:90vh; border:0; border-radius:12px;">
 </iframe>
+
+<script>
+  const select = document.getElementById("dashboard-select");
+  const frame = document.getElementById("dashboard-frame");
+
+  select.addEventListener("change", () => {
+    frame.src = select.value;
+  });
+</script>
