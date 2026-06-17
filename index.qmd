@@ -1,0 +1,11 @@
+---
+title: "Dashboard"
+---
+
+::: callout-note
+This page embeds the static Panel dashboard exported to HTML.
+:::
+
+<iframe src="panel-dashboard.html" style="width: 100%; height: 92vh; border: 0; border-radius: 16px;" loading="lazy">
+
+</iframe>

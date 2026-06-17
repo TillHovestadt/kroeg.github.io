@@ -1,0 +1,25 @@
+---
+title: "Methodology"
+---
+
+# Methodology
+
+This page is a placeholder for the narrative behind the map.
+
+You can use it to describe:
+
+- data sources
+- filtering rules
+- how the person-level data were aggregated to group level
+- how indicators were defined
+- any missing-data handling
+- limitations and caveats
+
+## Map workflow
+
+The static dashboard works like this:
+
+1.  Python-generated Plotly maps are saved as separate HTML files in `plots/`.
+2.  A manifest file maps each `group level + indicator` combination to one HTML file.
+3.  Panel exports a static HTML dashboard with dropdown menus.
+4.  Quarto publishes the site to GitHub Pages.

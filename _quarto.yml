@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Map dashboard"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Dashboard
+      - href: about.qmd
+        text: About
+      - href: methodology.qmd
+        text: Methodology
+
+format:
+  html:
+    theme: solar
+    page-layout: full
+    toc: false

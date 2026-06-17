@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "methodology.html",
+    "href": "methodology.html",
+    "title": "Methodology",
+    "section": "",
+    "text": "This page is a placeholder for the narrative behind the map.\nYou can use it to describe:\n\ndata sources\nfiltering rules\nhow the person-level data were aggregated to group level\nhow indicators were defined\nany missing-data handling\nlimitations and caveats\n\n\n\nThe static dashboard works like this:\n\nPython-generated Plotly maps are saved as separate HTML files in plots/.\nA manifest file maps each group level + indicator combination to one HTML file.\nPanel exports a static HTML dashboard with dropdown menus.\nQuarto publishes the site to GitHub Pages."
+  },
+  {
+    "objectID": "methodology.html#map-workflow",
+    "href": "methodology.html#map-workflow",
+    "title": "Methodology",
+    "section": "",
+    "text": "The static dashboard works like this:\n\nPython-generated Plotly maps are saved as separate HTML files in plots/.\nA manifest file maps each group level + indicator combination to one HTML file.\nPanel exports a static HTML dashboard with dropdown menus.\nQuarto publishes the site to GitHub Pages."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dashboard",
+    "section": "",
+    "text": "Note\n\n\n\nThis page embeds the static Panel dashboard exported to HTML."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
