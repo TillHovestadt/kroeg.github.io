@@ -1,7 +1,12 @@
 project:
   type: website
   output-dir: docs
-
+  render:
+    - "*.qmd"
+    - "!scripts/"
+  resources:
+    - plots/**
+    
 website:
   title: "Map dashboard"
   navbar:
@@ -15,6 +20,6 @@ website:
 
 format:
   html:
-    theme: solar
+    theme: flatly
     page-layout: full
     toc: false

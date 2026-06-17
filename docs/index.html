@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9a628ab9e3d62ef30a23c71ccf77eb8c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6033a600180109c3731f6a886c29932c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,29 +137,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This page embeds a dashboard selected from a dropdown.</p>
-</div>
-</div>
-<p><label for="dashboard-select">Choose an index:</label> <select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;"> <option value="docs/maps/third_places_total_ranked.html">All Third Places</option> <option value="docs/maps/third_places_non_medical_total_ranked.html">All Third Places without Medical Facilities</option> <option value="docs/maps/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option> <option value="docs/maps/third_places_medical_ranked.html">Medical Facilities only</option> <option value="docs/maps/third_places_retail_ranked.html">Retail Stores only</option> <option value="docs/maps/third_places_food_beverage_ranked">Food &amp; Beverage Places only</option> <option value="docs/maps/third_places_community_ranked.html">Community Spaces only</option> <option value="docs/maps/third_places_cultural_ranked.html">Cultural Venues only</option> <option value="docs/maps/third_places_sport_leisure_ranked.html">Sports &amp; Leisure Places only</option> </select></p>
-<iframe id="dashboard-frame" src="docs/dashboard.html" style="width:100%; height:90vh; border:0; border-radius:12px;">
+<p><label for="dashboard-select">Choose an index:</label> <select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;"> <option value="plots/third_places_total_ranked.html">All Third Places</option> <option value="plots/third_places_non_medical_total_ranked.html">All Third Places without Medical Facilities</option> <option value="plots/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option> <option value="plots/third_places_medical_ranked.html">Medical Facilities only</option> <option value="plots/third_places_retail_ranked.html">Retail Stores only</option> <option value="plots/third_places_food_beverage_ranked.html">Food &amp; Beverage Places only</option> <option value="plots/third_places_community_ranked.html">Community Spaces only</option> <option value="plots/third_places_cultural_ranked.html">Cultural Venues only</option> <option value="plots/third_places_sport_leisure_ranked.html">Sports &amp; Leisure Places only</option> </select></p>
+<iframe id="dashboard-frame" src="plots/third_places_total_ranked.html" style="width:100%; height:90vh; border:0; border-radius:12px;">
 </iframe>
 <script>
+window.addEventListener("load", () => {
+  const KEY = "selected-dashboard";
   const select = document.getElementById("dashboard-select");
   const frame = document.getElementById("dashboard-frame");
 
+  function setDashboard(src) {
+    frame.src = src;
+    localStorage.setItem(KEY, src);
+  }
+
+  const saved = localStorage.getItem(KEY);
+  if (saved && [...select.options].some(opt => opt.value === saved)) {
+    select.value = saved;
+    frame.src = saved;
+  }
+
   select.addEventListener("change", () => {
-    frame.src = select.value;
+    setDashboard(select.value);
   });
+});
 </script>
 
 

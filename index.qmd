@@ -3,10 +3,6 @@ title: "Dashboard"
 format: html
 ---
 
-::: callout-note
-This page embeds a dashboard selected from a dropdown.
-:::
-
 <label for="dashboard-select">Choose an index:</label>
 <select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;">
   <option value="plots/third_places_total_ranked.html">All Third Places</option>
@@ -14,7 +10,7 @@ This page embeds a dashboard selected from a dropdown.
   <option value="plots/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option>
   <option value="plots/third_places_medical_ranked.html">Medical Facilities only</option>
   <option value="plots/third_places_retail_ranked.html">Retail Stores only</option>
-  <option value="plots/third_places_food_beverage_ranked">Food & Beverage Places only</option>
+  <option value="plots/third_places_food_beverage_ranked.html">Food & Beverage Places only</option>
   <option value="plots/third_places_community_ranked.html">Community Spaces only</option>
   <option value="plots/third_places_cultural_ranked.html">Cultural Venues only</option>
   <option value="plots/third_places_sport_leisure_ranked.html">Sports & Leisure Places only</option>
@@ -22,15 +18,29 @@ This page embeds a dashboard selected from a dropdown.
 
 <iframe
   id="dashboard-frame"
-  src="plots/dashboard.html"
+  src="plots/third_places_total_ranked.html"
   style="width:100%; height:90vh; border:0; border-radius:12px;">
 </iframe>
 
 <script>
+window.addEventListener("load", () => {
+  const KEY = "selected-dashboard";
   const select = document.getElementById("dashboard-select");
   const frame = document.getElementById("dashboard-frame");
 
+  function setDashboard(src) {
+    frame.src = src;
+    localStorage.setItem(KEY, src);
+  }
+
+  const saved = localStorage.getItem(KEY);
+  if (saved && [...select.options].some(opt => opt.value === saved)) {
+    select.value = saved;
+    frame.src = saved;
+  }
+
   select.addEventListener("change", () => {
-    frame.src = select.value;
+    setDashboard(select.value);
   });
+});
 </script>
