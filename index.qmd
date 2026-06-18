@@ -3,47 +3,58 @@ title: "The KROEG Index"
 format: html
 ---
 
-This is an index comparing the amount of Third Places ([see methodology](./methodology.html) across postcode areas in the Netherlands. High values mean a higher availability of Third Places than in other postcodes. The KROEG index is constructed for a range of sectors. Below, you can choose the sector you want to visualise.
+This is an index comparing the amount of Third Places ([see methodology](./methodology.html) across postcode areas in the Netherlands. High values mean a higher availability of Third Places than in other postcodes. The Kroeg index is constructed for a range of sectors. Below, you can choose the sector you want to visualise.
 
+<label for="sector-select">Choose an index:</label>
+<select id="sector-select">
+  <option value="third_places_total_ranked">All Third Places</option>
+  <option value="third_places_non_medical_total_ranked">All Third Places without Medical Facilities</option>
+  <option value="third_places_non_medical_non_retail_total_ranked">All Third Places without Medical Facilities and Retail Stores</option>
+  <option value="third_places_medical_ranked">Medical Facilities only</option>
+  <option value="third_places_retail_ranked">Retail Stores only</option>
+  <option value="third_places_food_beverage_ranked">Food & Beverage Places only</option>
+  <option value="third_places_community_ranked">Community Spaces only</option>
+  <option value="third_places_cultural_ranked">Cultural Venues only</option>
+  <option value="third_places_sport_leisure_ranked">Sports & Leisure Places only</option>
+</select>
 
-<label for="dashboard-select">Choose an index:</label>
-<select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;">
-  <option value="plots/third_places_total_ranked.html">All Third Places</option>
-  <option value="plots/third_places_non_medical_total_ranked.html">All Third Places without Medical Facilities</option>
-  <option value="plots/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option>
-  <option value="plots/third_places_medical_ranked.html">Medical Facilities only</option>
-  <option value="plots/third_places_retail_ranked.html">Retail Stores only</option>
-  <option value="plots/third_places_food_beverage_ranked.html">Food & Beverage Places only</option>
-  <option value="plots/third_places_community_ranked.html">Community Spaces only</option>
-  <option value="plots/third_places_cultural_ranked.html">Cultural Venues only</option>
-  <option value="plots/third_places_sport_leisure_ranked.html">Sports & Leisure Places only</option>
+<label for="urbanisation-select" style="margin-left:20px;">
+  Urbanisation:
+</label>
+<select id="urbanisation-select">
+  <option value="all">Across the whole Netherlands</option>
+  <option value="1">Extremely urbanised</option>
+  <option value="2">Strongly urbanised</option>
+  <option value="3">Moderately urbanised</option>
+  <option value="4">Hardly urbanised</option>
+  <option value="5">Not urbanised</option>
 </select>
 
 <iframe
   id="dashboard-frame"
   src="plots/third_places_total_ranked.html"
-  style="width:100%; height:100%; border:0; border-radius:12px;">
+  width="100%"
+  height="900"
+  style="border:0;">
 </iframe>
 
 <script>
-window.addEventListener("load", () => {
-  const KEY = "selected-dashboard";
-  const select = document.getElementById("dashboard-select");
-  const frame = document.getElementById("dashboard-frame");
+const sectorSelect = document.getElementById("sector-select");
+const urbanSelect = document.getElementById("urbanisation-select");
+const frame = document.getElementById("dashboard-frame");
 
-  function setDashboard(src) {
-    frame.src = src;
-    localStorage.setItem(KEY, src);
+function updateDashboard() {
+  const sector = sectorSelect.value;
+  const urban = urbanSelect.value;
+
+  if (urban === "all") {
+    frame.src = `plots/${sector}.html`;
+  } else {
+    frame.src = `plots/${sector}_by_urbanisation_${urban}.html`;
   }
+}
 
-  const saved = localStorage.getItem(KEY);
-  if (saved && [...select.options].some(opt => opt.value === saved)) {
-    select.value = saved;
-    frame.src = saved;
-  }
-
-  select.addEventListener("change", () => {
-    setDashboard(select.value);
-  });
-});
+sectorSelect.addEventListener("change", updateDashboard);
+urbanSelect.addEventListener("change", updateDashboard);
 </script>
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dashboard – Third Place Index</title>
+<title>The KROEG Index – Third Place Index</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dashboard</h1>
+<h1 class="title">The KROEG Index</h1>
 </div>
 
 
@@ -139,30 +139,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><label for="dashboard-select">Choose an index:</label> <select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;"> <option value="plots/third_places_total_ranked.html">All Third Places</option> <option value="plots/third_places_non_medical_total_ranked.html">All Third Places without Medical Facilities</option> <option value="plots/third_places_non_medical_non_retail_total_ranked.html">All Third Places without Medical Facilities and Retail Stores</option> <option value="plots/third_places_medical_ranked.html">Medical Facilities only</option> <option value="plots/third_places_retail_ranked.html">Retail Stores only</option> <option value="plots/third_places_food_beverage_ranked.html">Food &amp; Beverage Places only</option> <option value="plots/third_places_community_ranked.html">Community Spaces only</option> <option value="plots/third_places_cultural_ranked.html">Cultural Venues only</option> <option value="plots/third_places_sport_leisure_ranked.html">Sports &amp; Leisure Places only</option> </select></p>
-<iframe id="dashboard-frame" src="plots/third_places_total_ranked.html" style="width:100%; height:100%; border:0; border-radius:12px;">
+<p>This is an index comparing the amount of Third Places (<a href="./methodology.html">see methodology</a> across postcode areas in the Netherlands. High values mean a higher availability of Third Places than in other postcodes. The Kroeg index is constructed for a range of sectors. Below, you can choose the sector you want to visualise.</p>
+<p><label for="sector-select">Choose an index:</label> <select id="sector-select"> <option value="third_places_total_ranked">All Third Places</option> <option value="third_places_non_medical_total_ranked">All Third Places without Medical Facilities</option> <option value="third_places_non_medical_non_retail_total_ranked">All Third Places without Medical Facilities and Retail Stores</option> <option value="third_places_medical_ranked">Medical Facilities only</option> <option value="third_places_retail_ranked">Retail Stores only</option> <option value="third_places_food_beverage_ranked">Food &amp; Beverage Places only</option> <option value="third_places_community_ranked">Community Spaces only</option> <option value="third_places_cultural_ranked">Cultural Venues only</option> <option value="third_places_sport_leisure_ranked">Sports &amp; Leisure Places only</option> </select></p>
+<p><label for="urbanisation-select" style="margin-left:20px;"> Urbanisation: </label> <select id="urbanisation-select"> <option value="all">Across the whole Netherlands</option> <option value="1">Extremely urbanised</option> <option value="2">Strongly urbanised</option> <option value="3">Moderately urbanised</option> <option value="4">Hardly urbanised</option> <option value="5">Not urbanised</option> </select></p>
+<iframe id="dashboard-frame" src="plots/third_places_total_ranked.html" width="100%" height="900" style="border:0;">
 </iframe>
 <script>
-window.addEventListener("load", () => {
-  const KEY = "selected-dashboard";
-  const select = document.getElementById("dashboard-select");
-  const frame = document.getElementById("dashboard-frame");
+const sectorSelect = document.getElementById("sector-select");
+const urbanSelect = document.getElementById("urbanisation-select");
+const frame = document.getElementById("dashboard-frame");
 
-  function setDashboard(src) {
-    frame.src = src;
-    localStorage.setItem(KEY, src);
+function updateDashboard() {
+  const sector = sectorSelect.value;
+  const urban = urbanSelect.value;
+
+  if (urban === "all") {
+    frame.src = `plots/${sector}.html`;
+  } else {
+    frame.src = `plots/${sector}_by_urbanisation_${urban}.html`;
   }
+}
 
-  const saved = localStorage.getItem(KEY);
-  if (saved && [...select.options].some(opt => opt.value === saved)) {
-    select.value = saved;
-    frame.src = saved;
-  }
-
-  select.addEventListener("change", () => {
-    setDashboard(select.value);
-  });
-});
+sectorSelect.addEventListener("change", updateDashboard);
+urbanSelect.addEventListener("change", updateDashboard);
 </script>
 
 
