@@ -91,7 +91,8 @@ For this project, that would mean one file per ranking column from the table abo
 Run:
 
 ```bash
-python build_site.py
+python scripts/panel_mapping.ipynb
+quarto render
 ```
 
 That script will:
