@@ -55,7 +55,7 @@ Each row above also exists with a `_by_urbanisation` suffix (e.g. `third_places_
 | 4 | Hardly urbanised | 500–1,000 per km² |
 | 5 | Not urbanised | Fewer than 500 per km² |
 
-## Data pipeline
+## Data pipeline available only inside SANE
 
 The maps used by the dashboard are produced by four notebooks, run in order:
 
