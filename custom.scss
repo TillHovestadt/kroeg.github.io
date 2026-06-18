@@ -1,53 +1,185 @@
 /*-- scss:defaults --*/
-$primary: #084a91;
-$link-color: $primary;
-$link-hover-color: #06356b;
-$body-bg: #f7f6f2;
-$body-color: #1f2937;
-$link-color: $primary;
-$navbar-bg: #ffffff;
-$navbar-fg: #111827;
-$navbar-hl: $primary;
+
+// ---------------------------------------------------------------------------
+// COLOR SYSTEM — soft, warm, low-strain orange
+// Two orange tones on purpose:
+//   $primary        -> bright accent (underlines, borders, banners). Decorative,
+//                      so a lighter tone is fine here.
+//   $primary-strong -> used for TEXT/LINKS. Darker so it passes WCAG AA contrast
+//                      (~4.7:1) on the cream background. Always use the darker tone
+//                      whenever orange sits on text the user must read.
+// ---------------------------------------------------------------------------
+$primary:        #d97742;   // warm muted orange — accents
+$primary-strong: #b85c2a;   // deeper orange — readable links/text
+$primary-deep:   #9a4a1e;   // hover state
+
+$link-color:        $primary-strong;
+$link-hover-color:  $primary-deep;
+
+$body-bg:    #fdf8f3;        // soft warm cream (not pure white = less glare)
+$body-color: #2b2722;        // warm near-black (cooler grays clash with orange)
+
+$navbar-bg: #fffdfb;         // barely-warm white
+$navbar-fg: #2b2722;
+$navbar-hl: $primary-strong;
+
 $font-family-sans-serif: "Source Sans 3", "Aptos", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
 /*-- scss:rules --*/
-.navbar {
-  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-  box-shadow: 0 1px 4px rgba(17, 24, 39, 0.04);
+
+// ---------------------------------------------------------------------------
+// REUSABLE TOKENS — define timing/shadow once, reuse everywhere so the whole
+// dashboard feels consistent. These are standard CSS custom properties.
+// ---------------------------------------------------------------------------
+:root {
+  --ease:        cubic-bezier(0.22, 0.61, 0.36, 1); // gentle "ease-out" feel
+  --speed-fast:  0.18s;
+  --speed:       0.25s;
+  --speed-slow:  0.45s;
+  --accent:      #{$primary};
+  --accent-soft: rgba(217, 119, 66, 0.12);
+  --shadow-1:    0 1px 4px rgba(80, 40, 10, 0.06);
+  --shadow-2:    0 10px 30px rgba(80, 40, 10, 0.12);
 }
 
+html { scroll-behavior: smooth; } // smooth jumps to anchors / TOC
+
+// --- Navbar -----------------------------------------------------------------
+.navbar {
+  border-bottom: 1px solid rgba(80, 40, 10, 0.08);
+  box-shadow: var(--shadow-1);
+}
+
+// Animated underline that grows from the center on hover/active.
+// The ::after pseudo-element is the moving bar; we only animate its `width`
+// (cheap to animate, no layout thrash).
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color var(--speed) var(--ease);
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width var(--speed) var(--ease);
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #{$primary-strong} !important;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: calc(100% - 1.5rem);
+}
+
+// --- Title banner -----------------------------------------------------------
+// One-time entrance animation: fade + slight slide-down when the page loads.
+// `both` keeps the start state before the animation begins (no flash).
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .quarto-title-banner,
 .title-block {
   background: linear-gradient(
     180deg,
-    rgba(8, 74, 145, 0.06),
-    rgba(8, 74, 145, 0)
+    rgba(217, 119, 66, 0.10),
+    rgba(217, 119, 66, 0)
   );
-  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+  border-bottom: 1px solid rgba(80, 40, 10, 0.06);
+  animation: fadeSlideIn var(--speed-slow) var(--ease) both;
 }
 
+// --- Callouts ---------------------------------------------------------------
 .callout-note {
-  border-left: 4px solid $primary;
+  border-left: 4px solid #{$primary};
   background: #fffdfb;
+  border-radius: 8px;
+  transition: transform var(--speed) var(--ease),
+              box-shadow var(--speed) var(--ease);
+}
+.callout-note:hover {
+  transform: translateX(3px);
+  box-shadow: var(--shadow-2);
 }
 
+// --- Embedded content (iframes / cards) -------------------------------------
+// Lift slightly toward the viewer on hover. transform + box-shadow are both
+// GPU-friendly, so this stays smooth even with heavy embedded charts.
 iframe {
   background: white;
-  border: 1px solid rgba(17, 24, 39, 0.08);
+  border: 1px solid rgba(80, 40, 10, 0.08);
   border-radius: 12px;
+  transition: transform var(--speed-slow) var(--ease),
+              box-shadow var(--speed-slow) var(--ease),
+              border-color var(--speed-slow) var(--ease);
 }
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-  color: #08519c !important;
+iframe:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(217, 119, 66, 0.45);
 }
-#TOC .active {
-  color: #08519c !important;
+
+// --- Table of contents ------------------------------------------------------
+// A left marker that fades in and the link nudges right on hover/active —
+// gives a clear, calm "you are here" cue.
+#TOC .active,
+.sidebar nav[role="doc-toc"] a.active {
+  color: #{$primary-strong} !important;
+}
+.sidebar nav[role="doc-toc"] a {
+  border-left: 2px solid transparent;
+  transition: color var(--speed) var(--ease),
+              padding-left var(--speed) var(--ease),
+              border-color var(--speed) var(--ease);
 }
 .sidebar nav[role="doc-toc"] a:hover,
 .sidebar nav[role="doc-toc"] a.active {
-  color: #08519c !important;
+  color: #{$primary-strong} !important;
+  padding-left: 0.4rem;
+  border-left-color: #{$primary};
 }
+
+// --- Generic links & buttons ------------------------------------------------
+a {
+  transition: color var(--speed-fast) var(--ease);
+}
+.btn-primary {
+  transition: transform var(--speed-fast) var(--ease),
+              box-shadow var(--speed) var(--ease),
+              filter var(--speed-fast) var(--ease);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  filter: brightness(1.03);
+}
+.btn-primary:active {
+  transform: translateY(0); // press-down feedback
+}
+
 main {
   max-width: 1280px;
 }
 
+// ---------------------------------------------------------------------------
+// ACCESSIBILITY — honour the OS "reduce motion" setting. This is what keeps
+// the result genuinely "nice on the eyes": anyone sensitive to motion gets a
+// calm, static version automatically. Keep this block LAST so it wins.
+// ---------------------------------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
