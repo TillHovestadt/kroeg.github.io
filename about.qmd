@@ -101,4 +101,10 @@ Till Hovestadt is a data scientist, computational social scientist, and doctoral
 
 This project developed as part of the Summer Institute of Computational Social Science ([SICSS](https://sicss.io/2026/odissei/)) 2026 at ODISSEI Nederland. We want extend our gratitude to the organisers of the SICSS, most notably [Tom Emery](https://www.eur.nl/people/tom-emery), [Angelica Maineri](https://odissei-data.nl/nl/teammember/dr-angelica-maineri/), [Javier Garcia Bernardo](https://www.uu.nl/staff/JGarciaBernardo), and [Tadas Bernotas](https://www.eur.nl/people/tadas-bernotas). Last but not least, we want to thank the other [participants](https://sicss.io/2026/odissei/people) of the SICSS ODISSEI 2026.
 
+# License and Use
 
+The KROEG Index is published under the GNU General Public License v2.0 (GPL-2.0). This open-source license permits anyone to use, study, modify, and redistribute the software, provided that any distributed modifications or derivative works are also released under the GPL-2.0 license. The GPL-2.0 is designed to ensure that the software and its source code remain freely available to the community.
+
+## Suggested Citation
+
+Florschütz, Tim, Aidan Kloots, & Till Hovestadt (2026). The KROEG Index. Kaart van Ruimtelijke Ontmoetingsplekken en Externe Gemeenschap in Nederland. https://doi.org/10.5281/zenodo.20748479
