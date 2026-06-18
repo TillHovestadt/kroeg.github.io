@@ -41,10 +41,10 @@ We also aggregated the sectors and calculated:
 
 Additionally, as the index --- almost by definition --- maps urban vs non-urban areas, we calculated each of these indices within the different levels of urbanisation. This means that the number of Third Places in a postcode is only compared to the number of Third Places in postcodes with the same degree of urbanisation. The urbanisation categories used by Statistics Netherlands (see [see the CBS urbanisation categories](https://www.cbs.nl/en-gb/our-services/methods/definitions/degree-of-urbanisation)) are: 
 
-- Extremely urbanised: more than 2,500 addresses / km^2
-- Strongly urbanised: between 1,500 and 2,500 addresses / km^2
-- Moderately urbanised: between 1,000 and 1,500 addresses / km^2
-- Hardly urbanised: between 500 and 1,000 addresses / km^2
-- Not urbanised: less than 500 addresses / km^2
+- Extremely urbanised: more than 2,500 addresses / $km^2$
+- Strongly urbanised: between 1,500 and 2,500 addresses / $km^2$
+- Moderately urbanised: between 1,000 and 1,500 addresses / $km^2$
+- Hardly urbanised: between 500 and 1,000 addresses / $km^2$
+- Not urbanised: less than 500 addresses / $km^2$
 
 

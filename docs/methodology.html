@@ -72,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -185,11 +214,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>Level of Urbanisation</h1>
 <p>Additionally, as the index — almost by definition — maps urban vs non-urban areas, we calculated each of these indices within the different levels of urbanisation. This means that the number of Third Places in a postcode is only compared to the number of Third Places in postcodes with the same degree of urbanisation. The urbanisation categories used by Statistics Netherlands (see <a href="https://www.cbs.nl/en-gb/our-services/methods/definitions/degree-of-urbanisation">see the CBS urbanisation categories</a>) are:</p>
 <ul>
-<li>Extremely urbanised: more than 2,500 addresses / km^2</li>
-<li>Strongly urbanised: between 1,500 and 2,500 addresses / km^2</li>
-<li>Moderately urbanised: between 1,000 and 1,500 addresses / km^2</li>
-<li>Hardly urbanised: between 500 and 1,000 addresses / km^2</li>
-<li>Not urbanised: less than 500 addresses / km^2</li>
+<li>Extremely urbanised: more than 2,500 addresses / <span class="math inline">\(km^2\)</span></li>
+<li>Strongly urbanised: between 1,500 and 2,500 addresses / <span class="math inline">\(km^2\)</span></li>
+<li>Moderately urbanised: between 1,000 and 1,500 addresses / <span class="math inline">\(km^2\)</span></li>
+<li>Hardly urbanised: between 500 and 1,000 addresses / <span class="math inline">\(km^2\)</span></li>
+<li>Not urbanised: less than 500 addresses / <span class="math inline">\(km^2\)</span></li>
 </ul>
 
 
