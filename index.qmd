@@ -3,7 +3,7 @@ title: "The KROEG Index"
 format: html
 ---
 
-This is an index comparing the amount of Third Places ([see methodology](./methodology.html) across postcode areas in the Netherlands. High values mean a higher availability of Third Places than in other postcodes. The Kroeg index is constructed for a range of sectors. Below, you can choose the sector you want to visualise.
+This is an index comparing the amount of Third Places ([see methodology for a full description](./methodology.html)) across postcode areas in the Netherlands. High values mean a higher availability of Third Places than in other postcodes. The Kroeg index is constructed for a range of sectors. Below, you can choose the sector you want to visualise.
 
 <label for="sector-select">Choose an index:</label>
 <select id="sector-select">
