@@ -9,7 +9,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Third Place Index"
+  title: "KROEG Index"
   navbar:
     background: light
     search: false
