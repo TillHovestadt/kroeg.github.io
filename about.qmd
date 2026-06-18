@@ -12,19 +12,19 @@ The Third Place Index, following a publication from the US by [Evan O'Neil](http
 
 # The Authors
 
-![Tim Florschütz](picture/tim.png){width=300px}
+![Tim Florschütz](picture/tim.png){width=150px}
 
 
 
 
 
-![Aidan Kloots](pictures/aidan.png){width=300px}
+![Aidan Kloots](pictures/aidan.png){width=150px}
 
 
 
 
 
-![Till Hovestadt](pictures/till.jpg){width=300px}
+![Till Hovestadt](pictures/till.jpg){width=150px}
 
 
 
