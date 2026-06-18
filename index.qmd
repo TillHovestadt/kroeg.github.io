@@ -1,7 +1,10 @@
 ---
-title: "Dashboard"
+title: "The KROEG Index"
 format: html
 ---
+
+This is an index comparing the amount of Third Places ([see methodology](./methodology.html) across postcode areas in the Netherlands. High values mean a higher availability of Third Places than in other postcodes. The KROEG index is constructed for a range of sectors. Below, you can choose the sector you want to visualise.
+
 
 <label for="dashboard-select">Choose an index:</label>
 <select id="dashboard-select" style="margin: 0.5rem 0 1rem 0;">

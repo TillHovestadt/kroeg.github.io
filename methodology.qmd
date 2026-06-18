@@ -19,6 +19,11 @@ We drew upon data from the [Dutch Chamber of Commerce](https://www.kvk.nl/) to b
 
 The exact codebook can be downloaded on Github:  [Download Sector Classification Codebook](data/sbi_sector_classification_codebook.csv). 
 
+The full KROEG index can be downloaded on Github:  
+- [Download KROEG Index as CSV File](data/KROEG_index.csv)
+- [Download KROEG Index as GPKG File](data/KROEG_index.gpkg)
+
+
 # The Index
 
 We calculated the number of Third Places of each of these sectors per PC-4 postcode. Then, we ranked the PC-4 postcode regions based on their number of Third Places in a given sector and calculated percentiles. This resulted in a score from 0 to 100. A value of 85 in the medical sector, for instance, means that this postcode has more medical services than 85% of the other postcodes. The data only contain this index and not the sum of Third Places per postcode as we could not export these numbers for postcodes with fewer than 10 companies due to the policy regulations of the CBS and of ODISSEI.
