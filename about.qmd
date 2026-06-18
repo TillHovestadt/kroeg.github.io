@@ -107,4 +107,4 @@ The KROEG Index is published under the GNU General Public License v2.0 (GPL-2.0)
 
 ## Suggested Citation
 
-Florschütz, Tim, Aidan Kloots, & Till Hovestadt (2026). The KROEG Index. Kaart van Ruimtelijke Ontmoetingsplekken en Externe Gemeenschap in Nederland. https://doi.org/10.5281/zenodo.20748479
+Florschütz, Tim, Aidan Kloots, and Till Hovestadt. ‘The KROEG Index - Kaart van Ruimtelijke Ontmoetingsplekken en Externe Gemeenschap in Nederland’. Zenodo, 18 June 2026. https://doi.org/10.5281/zenodo.20748479.
