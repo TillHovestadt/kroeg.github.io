@@ -20,6 +20,7 @@ We drew upon data from the [Dutch Chamber of Commerce](https://www.kvk.nl/) to b
 The exact codebook can be downloaded on Github:  [Download Sector Classification Codebook](data/sbi_sector_classification_codebook.csv). 
 
 The full KROEG index can be downloaded on Github:  
+
 - [Download KROEG Index as CSV File](data/KROEG_index.csv)
 - [Download KROEG Index as GPKG File](data/KROEG_index.gpkg)
 
