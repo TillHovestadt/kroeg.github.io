@@ -70,7 +70,7 @@ This project is set up for GitHub Pages.
 
 ### File naming convention
 
-Put your pre-rendered Plotly map HTML files into `plots/` using this pattern:
+Put your pre-rendered panel.holoviz map HTML files into `plots/` using this pattern:
 
 ```text
 <group_level>__<indicator>.html
@@ -91,7 +91,8 @@ For this project, that would mean one file per ranking column from the table abo
 Run:
 
 ```bash
-python build_site.py
+python scripts/panel_mapping.ipynb
+quarto render
 ```
 
 That script will:
