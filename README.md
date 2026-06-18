@@ -70,7 +70,7 @@ This project is set up for GitHub Pages.
 
 ### File naming convention
 
-Put your pre-rendered Plotly map HTML files into `plots/` using this pattern:
+Put your pre-rendered panel.holoviz map HTML files into `plots/` using this pattern:
 
 ```text
 <group_level>__<indicator>.html
