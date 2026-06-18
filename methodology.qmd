@@ -4,7 +4,9 @@ title: "Methodology"
 
 # Overview
 
-The KROEG index is an index based on the Third Place Index (TPI) (https://thirdplaceindex.org) the number of businesses, companies and instances within a postcode area. The index compares the amount and access to social and health infrastrucutres between postcode areas in the Netherlands. The derived dataset, dashboard and index can be utilized for inference and comparison between postcode area's for research and policymakers to analyse access to certain infrasctructures. 
+The KROEG index is an index based on the Third Place Index (TPI) (https://thirdplaceindex.org) the number of businesses, companies and instances within a postcode area. **KROEG** stands for *Kaart van Ruimtelijke Ontmoetingsplekken en Externe Gemeenschap* in Dutch and *KVK-based Ranking of Opportunities for Engagement and Gathering* in English. 
+
+The KROEG index compares the amount and access to social and health infrastrucutres between postcode areas in the Netherlands. The derived dataset, dashboard and index can be utilized for inference and comparison between postcode area's for research and policymakers to analyse access to certain infrasctructures. 
 
 # Data
 
