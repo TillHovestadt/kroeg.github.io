@@ -2,6 +2,24 @@
 title: "About"
 ---
 
+<style>
+.author-card {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: flex-start;
+}
+
+.author-photo {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.author-links {
+  margin-top: 15px;
+}
+</style>
+
 # Third Places
 
 The term **third place** was coined by sociologist Ray Oldenburg in his 1989 book *The Great Good Places*. Third Places are spaces open to the public in which they can informally gather, mingle, and pass time, such as restaurants, cafés, bookstores, or libraries. The term "Third Place" stems from the distinction from "First Places" (the home) and "Second Places" (work and education). See Methodology for a full list of Third Places included in our definition.
@@ -12,21 +30,71 @@ The Third Place Index, following a publication from the US by [Evan O'Neil](http
 
 # The Authors
 
-![Tim Florschütz](picture/tim.png){width=150px}
+<div class="author-card">
+
+<img class="author-photo"
+     src="pictures/tim_florschutz.jpg"
+     alt="Tim Florschütz">
+
+<div>
+
+### Tim Florschütz
+
+Tim Florschütz is a PhD candidate at the Pandemic and Disaster Preparedness Centre (PDPC), working on innovative infectious disease control with a focus on contact tracing. Background in infectious disease epidemiology and veterinary medicine.
+
+<div class="author-links">
+<a href="https://www.linkedin.com/in/tim-florschutz/?locale=nl" target="_blank">LinkedIn</a>
+</div>
+
+</div>
+
+</div>
 
 
 
 
 
-![Aidan Kloots](pictures/aidan.png){width=150px}
+<div class="author-card">
+
+<img class="author-photo"
+     src="pictures/aidan_kloots.jpg"
+     alt="Aidan Kloots">
+
+<div>
+
+### Aidan Kloots
+
+Aidan Kloots is a Research Coordinator and Researcher with strong data science background who enjoys healthcare data and closing unfair gaps in healthcare. Over three years he worked daily in R with Shiny, complemented by Python and SQL. He built a Digital Twin Shiny app for PLGA microsphere production where he used Machine Learning from raw process data, trained Random Forest models to predict quality outcomes, and used Bayesian Networks to map probabilistic dependencies between process parameters and critical quality attributes. He models interactive dashboards for stakeholders and prioritise interpretability so clinicians can trust on model outputs.
+
+<div class="author-links">
+<a href="https://www.linkedin.com/in/aidankl/" target="_blank">LinkedIn</a>
+</div>
+
+</div>
+
+</div>
 
 
 
+<div class="author-card">
 
+<img class="author-photo"
+     src="pictures/till_hovestadt.jpg"
+     alt="Till Hovestadt (Picture taken by Tom Weller Photography)">
 
-![Till Hovestadt](pictures/till.jpg){width=150px}
+<div>
 
+### Till Hovestadt
 
+Till Hovestadt is a data scientist, computational social scientist, and doctoral researcher at Nuffield College and the University of Oxford. With his work he aims to provide evidence-based predictions, policy recommendations, and analyses based on rigorous data science, machine learning, and statistical analyses.
+
+<div class="author-links">
+<a href="https://www.linkedin.com/in/till-hovestadt/" target="_blank">LinkedIn</a>
+</div>
+
+</div>
+
+</div>
 
 
 # Acknowledgements
